@@ -1,0 +1,8 @@
+.rg-width {
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .rg-width {
+    width: 100%;
+  }
+}

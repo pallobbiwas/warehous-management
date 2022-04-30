@@ -8,7 +8,7 @@ const Header = () => {
     <div>
       <Navbar className="nav-container container px-4" expand="lg">
         <Container>
-          <h2>The Shoe</h2>
+          <p><span className="fs-1"><span className="text-warning">C</span>anon</span> <span className="text-warning">C</span>amera</p>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -31,7 +31,7 @@ const Header = () => {
               <Link className="iteam" to="/myiteam">
               My iteam
               </Link>
-              <Link className="iteam ms-5" to="/login">
+              <Link className="iteam ms-5 logbtn" to="/login">
               LogIn
               </Link>
             </Nav>
