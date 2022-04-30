@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./componets/Home/Home";
 import Inventory from "./componets/Inventory/Inventory";
+import MyBlogs from "./componets/MyBlogs/MyBlogs";
 import AddIteam from "./componets/PrivateRoute/AddIteam/AddIteam";
 import ManageIteam from "./componets/PrivateRoute/ManageIteam/ManageIteam";
 import MyIteam from "./componets/PrivateRoute/MyIteam/MyIteam";
@@ -47,6 +48,7 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/ragister" element={<Ragister />}></Route>
+        <Route path="/blogs" element={<MyBlogs />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />

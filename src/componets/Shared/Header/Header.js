@@ -31,6 +31,9 @@ const Header = () => {
               <Link className="iteam" to="/inventory">
                 Inventory
               </Link>
+              <Link className="iteam" to="/blogs">
+                My Blogs
+              </Link>
               {user ? (
                 <Link className="iteam" to="/manageiteam">
                   Manage iteam
