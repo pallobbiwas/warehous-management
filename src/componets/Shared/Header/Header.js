@@ -1,4 +1,4 @@
-import { signOut } from 'firebase/auth';
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -31,22 +31,36 @@ const Header = () => {
               <Link className="iteam" to="/inventory">
                 Inventory
               </Link>
-              <Link className="iteam" to="/manageiteam">
-                Manage iteam
-              </Link>
-              <Link className="iteam" to="/additeam">
-                Add iteam
-              </Link>
-              <Link className="iteam" to="/myiteam">
-                My iteam
-              </Link>
+              {user ? (
+                <Link className="iteam" to="/manageiteam">
+                  Manage iteam
+                </Link>
+              ) : (
+                ""
+              )}
+              {user ? (
+                <Link className="iteam" to="/additeam">
+                  Add iteam
+                </Link>
+              ) : (
+                ""
+              )}
+              {user ? (
+                <Link className="iteam" to="/myiteam">
+                  My iteam
+                </Link>
+              ) : (
+                ""
+              )}
               {!user ? (
                 <Link className="iteam ms-5 logbtn" to="/login">
                   {" "}
                   LogIn
                 </Link>
               ) : (
-                <button onClick={()=>signOut(auth)} className="logbtn">Sign out</button>
+                <button onClick={() => signOut(auth)} className="logbtn">
+                  Sign out
+                </button>
               )}
             </Nav>
           </Navbar.Collapse>

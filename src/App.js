@@ -15,7 +15,7 @@ import Ragister from "./componets/Shared/Ragister/Ragister";
 
 function App() {
   return (
-    <div className="App py-4 container-fluid">
+    <div className="App pt-4">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
