@@ -1,6 +1,11 @@
 import React from "react";
+import lance1 from "../../images/lance/lance1.png";
+import lance2 from "../../images/lance/lance2.png";
+import lance3 from "../../images/lance/lance3.png";
+import lance4 from "../../images/lance/lance4.png";
 import why from "../../images/why.jpg";
 import Banner from "../Banner/Banner";
+import Inventory from "../Inventory/Inventory";
 import "./Home.css";
 
 const Home = () => {
@@ -36,6 +41,42 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div>
+        <h3>Our best product</h3>
+        <hr />
+        <div className="row g-4 my-4">
+          <div className="col-md-3">
+            <div className="lance-box">
+              <img className="img-width img-fluid" src={lance1} alt="" />
+              <h3 className="mt-2">Price: 23000$</h3>
+              <button className="buy-btn">Buy now</button>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="lance-box">
+              <img className="img-width img-fluid" src={lance2} alt="" />
+              <h3 className="mt-2">Price: 12000$</h3>
+              <button className="buy-btn">Buy now</button>
+            </div>{" "}
+          </div>
+          <div className="col-md-3">
+            <div className="lance-box">
+              <img className="img-width img-fluid" src={lance3} alt="" />
+              <h3 className="mt-2">Price: 5400$</h3>
+              <button className="buy-btn">Buy now</button>
+            </div>{" "}
+          </div>
+          <div className="col-md-3">
+            <div className="lance-box">
+              <img className="img-width img-fluid" src={lance4} alt="" />
+              <h3 className="mt-2">Price: 5000$</h3>
+              <button className="buy-btn">Buy now</button>
+            </div>{" "}
+          </div>
+        </div>
+        <hr />
+      </div>
+      <Inventory />
     </div>
   );
 };

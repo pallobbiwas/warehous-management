@@ -1,0 +1,20 @@
+.product-box img {
+  min-height: 300px;
+  width: 300px;
+}
+.product-box img:hover {
+  transform: rotate(180deg);
+  transition: 2s;
+}
+.invetory-btn {
+  background-color: black;
+  color: aliceblue;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.invetory-btn:hover {
+  background-color: orange;
+}
