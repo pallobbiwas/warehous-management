@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./componets/Home/Home";
-import Inventory from "./componets/Inventory/Inventory";
 import MyBlogs from "./componets/MyBlogs/MyBlogs";
 import AddIteam from "./componets/PrivateRoute/AddIteam/AddIteam";
 import ManageIteam from "./componets/PrivateRoute/ManageIteam/ManageIteam";
@@ -21,7 +20,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/inventory" element={<Inventory />}></Route>
         <Route
           path="/manageiteam"
           element={
