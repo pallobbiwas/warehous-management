@@ -1,7 +1,29 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import useProduct from "../../../hooks/useProduct";
 import "./MyProducts.css";
 
-const MyProducts = ({ product: { name, img, seller, quantity } }) => {
+const MyProducts = ({ product: { _id, name, img, seller, quantity } }) => {
+  const [products, setProducts] = useProduct();
+  const navigate = useNavigate();
+  const deleteItem = (id) => {
+    console.log(id);
+    const confirmd = window.confirm("are you sure");
+    if (confirmd) {
+      const url = `http://localhost:5000/data/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remainData = products.filter((c) => c._id !== id);
+          setProducts(remainData);
+          console.log(remainData);
+        });
+      alert("Delete done. go to home");
+      navigate("/home");
+    }
+  };
   return (
     <div className="col-md-3">
       <div>
@@ -10,7 +32,9 @@ const MyProducts = ({ product: { name, img, seller, quantity } }) => {
         <p>
           <span>Seller: {seller}</span>
           <span> Quantity: {quantity}</span>
-          <button className="buy-btn">Delete</button>
+          <button onClick={() => deleteItem(_id)} className="buy-btn">
+            Delete
+          </button>
         </p>
       </div>
     </div>

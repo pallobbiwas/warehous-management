@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useProduct from "../../../hooks/useProduct";
 import "./ManageProduct.css";
 
 const ManageProduct = ({ p: { _id, img, name } }) => {
   const [products, setProducts] = useProduct();
+  const navigate = useNavigate();
 
   //delte btn
   const deleteItem = (id) => {
@@ -20,11 +22,13 @@ const ManageProduct = ({ p: { _id, img, name } }) => {
           setProducts(remainData);
           console.log(remainData);
         });
+        alert('Delete done. go to home');
+        navigate('/home')
     }
   };
 
   return (
-    <div className="d-flex justify-content-around align-items-center w-50 row mx-auto mt-4">
+    <div className="d-flex justify-content-around align-items-center w-50 row mx-auto mt-4 bg-info px-5 py-2 rounded-3">
       <div className="col-md-3">
         <img className="img img-fluid" src={img} alt="" />
       </div>

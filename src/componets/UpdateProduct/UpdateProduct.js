@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./UpdateProduct.css";
 
 const UpdateProduct = () => {
   const { id } = useParams();
   console.log(id);
+  const navigate = useNavigate()
 
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
@@ -30,6 +31,7 @@ const UpdateProduct = () => {
         console.log("Success:", data);
         alert('added successfyll, reload this page')
       });
+      window.location.reload();
   };
 
   // decrise one
@@ -46,6 +48,7 @@ const UpdateProduct = () => {
         console.log("Success:", data);
         alert('Delivery successfyll, reload this page')
       });
+      window.location.reload();
   }
   
   return (
