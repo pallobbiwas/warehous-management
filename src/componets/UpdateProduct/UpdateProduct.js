@@ -32,6 +32,22 @@ const UpdateProduct = () => {
       });
   };
 
+  // decrise one
+
+  const decriseOne = () => {
+    fetch(`http://localhost:5000/datas/${id}?oldQuantity=${singleProduct.quantity}`, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        alert('added successfyll')
+      });
+  }
+  
   return (
     <div className="mt-5 container text-center">
       <h2>Welcome to Infentory of : {singleProduct.name}</h2>
@@ -47,7 +63,7 @@ const UpdateProduct = () => {
           <h5>Discription: {singleProduct.discription}</h5>
           <h5>Seller: {singleProduct.seller}</h5>
           <h5>Quantity: {singleProduct.quantity}</h5>
-          <button className="deliver-btn">Deliverd</button>
+          <button onClick={decriseOne} className="deliver-btn">Deliverd</button>
         </div>
         <div className="col-md-6">
           <h3 className="mb-3">Add quantity</h3>
