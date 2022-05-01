@@ -28,7 +28,7 @@ const UpdateProduct = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        alert('added successfyll')
+        alert('added successfyll, reload this page')
       });
   };
 
@@ -44,7 +44,7 @@ const UpdateProduct = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        alert('added successfyll')
+        alert('Delivery successfyll, reload this page')
       });
   }
   

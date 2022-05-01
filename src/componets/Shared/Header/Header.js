@@ -8,6 +8,7 @@ import "./Header.css";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+  console.log(user);
   return (
     <div>
       <Navbar className="nav-container container px-4" expand="lg">
@@ -52,6 +53,7 @@ const Header = () => {
               ) : (
                 ""
               )}
+              {user ? <p className="userNmae">{user?.displayName}</p> : ""}
               {!user ? (
                 <Link className="iteam ms-5 logbtn" to="/login">
                   {" "}
