@@ -12,6 +12,7 @@ import Header from "./componets/Shared/Header/Header";
 import Login from "./componets/Shared/Login/Login";
 import NotFound from "./componets/Shared/NotFound/NotFound";
 import Ragister from "./componets/Shared/Ragister/Ragister";
+import UpdateProduct from "./componets/UpdateProduct/UpdateProduct";
 
 function App() {
   return (
@@ -47,6 +48,14 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/ragister" element={<Ragister />}></Route>
         <Route path="/blogs" element={<MyBlogs />}></Route>
+        <Route
+          path="/invemtory/:id"
+          element={
+            <RequerAuth>
+              <UpdateProduct />
+            </RequerAuth>
+          }
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />

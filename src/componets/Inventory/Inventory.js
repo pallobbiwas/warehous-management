@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useProduct from "../../hooks/useProduct";
 import "./Inventory.css";
 import Product from "./Product/Product";
 
 const Inventory = () => {
-  const [products, setProducts] = useState([]);
+  /* const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/data")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, []); */
+  const [products, setProducts] = useProduct();
   return (
     <div className="mt-5">
       <h2>Inventory</h2>
