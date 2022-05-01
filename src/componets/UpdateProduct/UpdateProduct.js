@@ -16,7 +16,21 @@ const UpdateProduct = () => {
   console.log(singleProduct);
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+
+    fetch(`http://localhost:5000/data/${id}?oldQuantity=${singleProduct.quantity}`, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        alert('added successfyll')
+      });
+  };
 
   return (
     <div className="mt-5 container text-center">
