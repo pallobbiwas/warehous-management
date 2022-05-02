@@ -40,7 +40,7 @@ const Inventory = () => {
             className={
               page === n
                 ? "bg-info me-2 rounded-3"
-                : "bg-warning me-2 rounded-3"
+                : " me-2 rounded-3"
             }
             onClick={() => setPage(n)}
             key={n}
