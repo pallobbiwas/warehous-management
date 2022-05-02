@@ -28,7 +28,7 @@ const ManageProduct = ({ p: { _id, img, name } }) => {
   };
 
   return (
-    <div className="d-flex justify-content-around align-items-center w-50 row mx-auto mt-4 bg-info px-5 py-2 rounded-3">
+    <div className=" d-flex justify-content-around align-items-center row mx-auto mt-4 bg-info px-5 py-2 rounded-3">
       <div className="col-md-3">
         <img className="img img-fluid" src={img} alt="" />
       </div>
