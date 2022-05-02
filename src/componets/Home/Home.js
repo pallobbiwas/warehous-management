@@ -15,7 +15,12 @@ const Home = () => {
       <div className="my-5">
         <h2>Why you using canon camera..?</h2>
         <hr />
-        <div className="row py-4 d-flex align-items-center">
+        <div
+          className="row py-4 d-flex align-items-center"
+          data-aos="zoom-in-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
           <div className="col-md-7">
             <p>
               Use a canon DSLR camera to capture decisive moments with fast
@@ -44,7 +49,12 @@ const Home = () => {
       <div>
         <h3>Our best product</h3>
         <hr />
-        <div className="row g-4 my-4">
+        <div
+          className="row g-4 my-4"
+          data-aos="zoom-in-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
           <div className="col-md-3">
             <div className="lance-box">
               <img className="img-width img-fluid" src={lance1} alt="" />

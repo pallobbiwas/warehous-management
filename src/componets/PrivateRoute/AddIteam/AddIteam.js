@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./AddIteam.css";
 
 const AddIteam = (e) => {
@@ -20,6 +21,7 @@ const AddIteam = (e) => {
         .then((data) => {
           console.log("Success:", data);
         });
+        Swal.fire("Successfull Added", "Thank you");
         navigate('/home')
     }
   };

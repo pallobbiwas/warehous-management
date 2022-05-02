@@ -38,9 +38,7 @@ const Inventory = () => {
         {[...Array(pageCount).keys()].map((n) => (
           <button
             className={
-              page === n
-                ? "bg-info me-2 rounded-3"
-                : " me-2 rounded-3"
+              page === n ? "bg-info me-2 rounded-3" : " me-2 rounded-3"
             }
             onClick={() => setPage(n)}
             key={n}

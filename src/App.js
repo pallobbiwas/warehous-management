@@ -1,4 +1,7 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./componets/Home/Home";
@@ -15,6 +18,9 @@ import Ragister from "./componets/Shared/Ragister/Ragister";
 import UpdateProduct from "./componets/UpdateProduct/UpdateProduct";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="App pt-4">
       <Header />

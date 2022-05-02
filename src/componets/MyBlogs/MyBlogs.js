@@ -6,7 +6,12 @@ const MyBlogs = () => {
     <div className="container pt-5">
       <h2>My blogs here</h2>
       <hr />
-      <div className="row">
+      <div
+        className="row"
+        data-aos="zoom-in-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <div className="col-md-6">
           <div className="box">
             <h4>Difference between javascript and nodejs</h4>

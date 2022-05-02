@@ -11,7 +11,7 @@ const MyIteam = () => {
   const [user] = useAuthState(auth);
 
   const [findProduct, setFindProduct] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -25,11 +25,11 @@ const MyIteam = () => {
           },
         });
         setFindProduct(data);
-      } catch(error) {
-        if(error.response.status === 401 || error.response.status === 403 ){
-          alert('access forbidden, go to log in')
+      } catch (error) {
+        if (error.response.status === 401 || error.response.status === 403) {
+          alert("access forbidden, go to log in");
           signOut(auth);
-          navigate('/login');
+          navigate("/login");
         }
       }
     };
@@ -37,7 +37,12 @@ const MyIteam = () => {
   }, [user]);
 
   return (
-    <div className="container-fluid my-5">
+    <div
+      className="container-fluid my-5"
+      data-aos="zoom-in-up"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
       <h1 className="text-center">my iteams</h1>
       <hr />
       <div className="container row">
