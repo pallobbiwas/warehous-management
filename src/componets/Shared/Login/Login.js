@@ -40,6 +40,7 @@ const Login = () => {
   //google log in
   const googleLogin = () => {
     signInWithGoogle();
+    navigate("/home");
   };
   const forgetpass = async () => {
     const email = emailRef.current.value;

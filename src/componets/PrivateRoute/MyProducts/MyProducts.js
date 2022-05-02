@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import useProduct from "../../../hooks/useProduct";
 import "./MyProducts.css";
 
@@ -20,7 +21,7 @@ const MyProducts = ({ product: { _id, name, img, seller, quantity } }) => {
           setProducts(remainData);
           console.log(remainData);
         });
-      alert("Delete done. go to home");
+        Swal.fire("Successfull delete", "Thank you");
       navigate("/home");
     }
   };

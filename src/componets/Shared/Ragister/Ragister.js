@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
-    useCreateUserWithEmailAndPassword,
-    useSendEmailVerification,
-    useUpdateProfile
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+  useUpdateProfile
 } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
 import "./Ragister.css";
 
@@ -35,7 +36,7 @@ const Ragister = () => {
 
     await createUserWithEmailAndPassword(email, pass);
     await sendEmailVerification();
-    alert("Sent email");
+    Swal.fire("Successfull", "Email send");
     await updateProfile({ displayName: name });
     alert("Updated profile");
     navigate("/home");
