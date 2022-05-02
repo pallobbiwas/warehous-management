@@ -11,7 +11,7 @@ const UpdateProduct = () => {
 
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/data/${id}`)
+    fetch(`https://shrouded-headland-19320.herokuapp.com/data/${id}`)
       .then((res) => res.json())
       .then((data) => setSingelProduct(data));
   }, []);
@@ -20,7 +20,7 @@ const UpdateProduct = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     fetch(
-      `http://localhost:5000/data/${id}?oldQuantity=${singleProduct.quantity}`,
+      `https://shrouded-headland-19320.herokuapp.com/data/${id}?oldQuantity=${singleProduct.quantity}`,
       {
         method: "put",
         headers: {
@@ -41,7 +41,7 @@ const UpdateProduct = () => {
 
   const decriseOne = () => {
     fetch(
-      `http://localhost:5000/datas/${id}?oldQuantity=${singleProduct.quantity}`,
+      `https://shrouded-headland-19320.herokuapp.com/datas/${id}?oldQuantity=${singleProduct.quantity}`,
       {
         method: "put",
         headers: {

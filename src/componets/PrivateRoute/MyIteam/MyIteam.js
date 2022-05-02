@@ -17,7 +17,7 @@ const MyIteam = () => {
     const getProduct = async () => {
       const email = user?.email;
       console.log(email);
-      const url = `http://localhost:5000/personaldata?email=${email}`;
+      const url = `https://shrouded-headland-19320.herokuapp.com/personaldata?email=${email}`;
       try {
         const { data } = await axios.get(url, {
           headers: {

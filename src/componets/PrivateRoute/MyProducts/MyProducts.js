@@ -11,7 +11,7 @@ const MyProducts = ({ product: { _id, name, img, seller, quantity } }) => {
     console.log(id);
     const confirmd = window.confirm("are you sure");
     if (confirmd) {
-      const url = `http://localhost:5000/data/${id}`;
+      const url = `https://shrouded-headland-19320.herokuapp.com/data/${id}`;
       fetch(url, {
         method: "DELETE",
       })

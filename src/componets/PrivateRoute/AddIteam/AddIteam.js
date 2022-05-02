@@ -10,7 +10,7 @@ const AddIteam = (e) => {
   const onSubmit = (data) => {
     const confirmd = window.confirm("add successfull, go to home");
     if (confirmd) {
-      fetch("http://localhost:5000/data", {
+      fetch("https://shrouded-headland-19320.herokuapp.com/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

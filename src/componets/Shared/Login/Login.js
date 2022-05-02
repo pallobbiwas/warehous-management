@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
-  useSendPasswordResetEmail,
-  useSignInWithEmailAndPassword,
-  useSignInWithGoogle
+    useSendPasswordResetEmail,
+    useSignInWithEmailAndPassword,
+    useSignInWithGoogle
 } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -32,7 +32,7 @@ const Login = () => {
     const email = emailRef.current.value;
     const pass = passRef.current.value;
     await signInWithEmailAndPassword(email, pass);
-    const {data} = await axios.post('http://localhost:5000/login', {email})
+    const {data} = await axios.post('https://shrouded-headland-19320.herokuapp.com/login', {email})
     console.log(data.accessToken);
     localStorage.setItem('accessToken', data.accessToken);
     navigate("/home");
