@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./AddIteam.css";
 
 const AddIteam = (e) => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
   const onSubmit = (data) => {
     const confirmd = window.confirm("add successfull, go to home");
     if (confirmd) {
@@ -22,7 +24,7 @@ const AddIteam = (e) => {
           console.log("Success:", data);
         });
         Swal.fire("Successfull Added", "Thank you");
-        navigate('/home')
+        navigate(from)
     }
   };
 

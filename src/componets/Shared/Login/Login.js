@@ -2,11 +2,11 @@ import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
-    useSendPasswordResetEmail,
-    useSignInWithEmailAndPassword,
-    useSignInWithGoogle
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
@@ -26,6 +26,9 @@ const Login = () => {
 
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
+
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   // loging handeler
   const emailLogin = async(e) => {
     e.preventDefault();
@@ -35,12 +38,12 @@ const Login = () => {
     const {data} = await axios.post('https://shrouded-headland-19320.herokuapp.com/login', {email})
     console.log(data.accessToken);
     localStorage.setItem('accessToken', data.accessToken);
-    navigate("/home");
+    navigate(from);
   };
   //google log in
   const googleLogin = () => {
     signInWithGoogle();
-    navigate("/home");
+    navigate(from);
   };
   const forgetpass = async () => {
     const email = emailRef.current.value;

@@ -2,8 +2,8 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import CustomLink from "../../CustomLink/CustomLink";
 import "./Header.css";
 
 const Header = () => {
@@ -26,39 +26,39 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Link className="iteam" to="/home">
+              <CustomLink className="iteam" to="/home">
                 Home
-              </Link>
-              <Link className="iteam" to="/blogs">
+              </CustomLink>
+              <CustomLink className="iteam" to="/blogs">
                 My Blogs
-              </Link>
+              </CustomLink>
               {user ? (
-                <Link className="iteam" to="/manageiteam">
+                <CustomLink className="iteam" to="/manageiteam">
                   Manage iteam
-                </Link>
+                </CustomLink>
               ) : (
                 ""
               )}
               {user ? (
-                <Link className="iteam" to="/additeam">
+                <CustomLink className="iteam" to="/additeam">
                   Add iteam
-                </Link>
+                </CustomLink>
               ) : (
                 ""
               )}
               {user ? (
-                <Link className="iteam" to="/myiteam">
+                <CustomLink className="iteam" to="/myiteam">
                   My iteam
-                </Link>
+                </CustomLink>
               ) : (
                 ""
               )}
               {user ? <p className="userNmae">{user?.displayName}</p> : ""}
               {!user ? (
-                <Link className="iteam ms-5 logbtn" to="/login">
+                <CustomLink className="iteam ms-5 logbtn" to="/login">
                   {" "}
                   LogIn
-                </Link>
+                </CustomLink>
               ) : (
                 <button onClick={() => signOut(auth)} className="logbtn">
                   Sign out
