@@ -1,17 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import useProduct from "../../../hooks/useProduct";
 import MyProducts from "../MyProducts/MyProducts";
 import "./MyIteam.css";
 
 const MyIteam = () => {
   const [user] = useAuthState(auth);
-  const email = user?.email;
-  const [products] = useProduct();
-  const findProduct = products.filter((p) => p.email === email);
+ 
+  const [findProduct, setFindProduct] = useState([]);
 
-  console.log(findProduct);
+  useEffect(()=>{
+    const getProduct = async () => {
+      const email = user?.email;
+      console.log(email);
+      const url = `http://localhost:5000/personaldata?email=${email}`
+      const {data} = await axios.get(url);
+      setFindProduct(data)
+
+    }
+    getProduct()
+  },[user])
+
 
   return (
     <div className="container-fluid my-5">

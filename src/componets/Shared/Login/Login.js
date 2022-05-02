@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
@@ -26,11 +27,15 @@ const Login = () => {
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   // loging handeler
-  const emailLogin = (e) => {
+  const emailLogin = async(e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const pass = passRef.current.value;
-    signInWithEmailAndPassword(email, pass);
+    await signInWithEmailAndPassword(email, pass);
+    const {data} = await axios.post('http://localhost:5000/login', {email})
+    console.log(data.accessToken);
+    localStorage.setItem('accessToken', data.accessToken);
+    navigate("/home");
   };
   //google log in
   const googleLogin = () => {
@@ -42,9 +47,7 @@ const Login = () => {
     toast("Sent email");
   };
 
-  if (emailUser || googelUser) {
-    navigate("/home");
-  }
+ 
   if (emailError || googleError) {
     errorElemet = <p>{emailError?.message}</p>;
   }
