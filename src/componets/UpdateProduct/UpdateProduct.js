@@ -79,9 +79,12 @@ const UpdateProduct = () => {
         <div className="col-md-6">
           <h3 className="mb-3">Add quantity</h3>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="number" {...register("quantity")} />
+            <input type="number" {...register("quantity", {required: true})} />
             <input type="submit" value="Add" />
           </form>
+        </div>
+        <div className="mt-5 ">
+          <button onClick={()=>navigate('/home')} className="buy-btn py-2">All inventory</button>
         </div>
       </div>
     </div>

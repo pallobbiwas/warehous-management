@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import useProduct from "../../../hooks/useProduct";
 import "./ManageProduct.css";
 
-const ManageProduct = ({ p: { _id, img, name } }) => {
+const ManageProduct = ({ p: { _id, img, name, quantity } }) => {
   const [products, setProducts] = useProduct();
   const navigate = useNavigate();
 
@@ -33,8 +33,11 @@ const ManageProduct = ({ p: { _id, img, name } }) => {
       <div className="col-md-3">
         <img className="img img-fluid" src={img} alt="" />
       </div>
-      <div className="col-md-7">
+      <div className="col-md-4">
         <h3>{name}</h3>
+      </div>
+      <div className="col-md-3">
+        <h3>{quantity}</h3>
       </div>
       <div className="col-md-2">
         <button onClick={() => deleteItem(_id)} className="delte-btn">

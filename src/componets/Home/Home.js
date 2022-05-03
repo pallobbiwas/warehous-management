@@ -59,28 +59,28 @@ const Home = () => {
             <div className="lance-box">
               <img className="img-width img-fluid" src={lance1} alt="" />
               <h3 className="mt-2">Price: 23000$</h3>
-              <button className="buy-btn">Buy now</button>
+              <button className="buy-btn">Stocked</button>
             </div>
           </div>
           <div className="col-md-3">
             <div className="lance-box">
               <img className="img-width img-fluid" src={lance2} alt="" />
               <h3 className="mt-2">Price: 12000$</h3>
-              <button className="buy-btn">Buy now</button>
+              <button className="buy-btn">Stocked</button>
             </div>{" "}
           </div>
           <div className="col-md-3">
             <div className="lance-box">
               <img className="img-width img-fluid" src={lance3} alt="" />
               <h3 className="mt-2">Price: 5400$</h3>
-              <button className="buy-btn">Buy now</button>
+              <button className="buy-btn">Stocked out</button>
             </div>{" "}
           </div>
           <div className="col-md-3">
             <div className="lance-box">
               <img className="img-width img-fluid" src={lance4} alt="" />
               <h3 className="mt-2">Price: 5000$</h3>
-              <button className="buy-btn">Buy now</button>
+              <button className="buy-btn">Stocked limited</button>
             </div>{" "}
           </div>
         </div>
