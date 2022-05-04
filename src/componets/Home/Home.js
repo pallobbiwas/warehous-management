@@ -87,6 +87,7 @@ const Home = () => {
         <hr />
       </div>
       <Inventory />
+
     </div>
   );
 };

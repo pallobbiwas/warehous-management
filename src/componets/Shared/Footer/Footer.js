@@ -8,6 +8,7 @@ import linkdn from "../../../images/linkdin.jpg";
 import "./Footer.css";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <div className="mt-5 footrt-bg-collor pb-4">
       <div className="row container-fluid pt-3">
@@ -91,7 +92,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="text-center">
-        <small className="py-4">Everything is &copy; copy right by 2022</small>
+        <small className="py-4">Everything is &copy; copy right by {year}</small>
       </div>
     </div>
   );
